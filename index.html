@@ -1,0 +1,243 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title> Julfikar Rayim Make Tihs Clock</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <section>
+
+        <div class="container">
+
+            <div class="clock">
+
+                <span id="hrs">00</span>
+
+                <span>:</span>
+
+                <span id="min">00</span>
+
+                <span>:</span>
+
+                <span id="sec">00</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+
+        let hrs = document.getElementById("hrs");
+
+        let min = document.getElementById("min");
+
+        let sec = document.getElementById("sec");
+
+
+
+        setInterval(() => {
+
+            let currentTime = new Date();
+
+
+
+            hrs.innerHTML = (currentTime.getHours()<10? "0":"") + currentTime.getHours();
+
+            min.innerHTML = (currentTime.getMinutes()<10? "0":"") + currentTime.getMinutes();
+
+            sec.innerHTML = (currentTime.getSeconds()<10? "0":"") + currentTime.getSeconds();
+
+        },1000);
+
+
+
+        let currentTime = new Date();
+
+
+
+        hrs.innerHTML = currentTime.getHours();
+
+        min.innerHTML = currentTime.getMinutes();
+
+        sec.innerHTML = currentTime.getSeconds();
+
+    </script>
+
+<style>
+
+
+
+
+
+
+
+
+*{
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    font-family: sans-serif;
+
+}
+
+section{
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: url("/Julfikar Log in Box/background.jpg") no-repeat center;
+    background-size: cover;
+
+    color: #fff;
+
+}
+
+.container{
+
+    position: absolute;
+
+    width: 800px;
+
+    height: 180px;
+
+    top: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
+}
+
+.clock{
+
+    width: 100%;
+
+    height: 100%;
+
+    background: rgba(235,0,255,0.11);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    backdrop-filter: blur(40px);
+
+}
+
+.container::before{
+
+    content: '';
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    background: #f41b75;
+
+    border-radius: 5px;
+
+    top: -50px;
+
+    left: -50px;
+
+    z-index: -1;
+
+}
+
+.container::after{
+
+    content: '';
+
+    position: absolute;
+
+    width: 180px;
+
+    height: 180px;
+
+    background: #419aff;
+
+    border-radius: 50%;
+
+    bottom: -50px;
+
+    right: -30px;
+
+    z-index: -1;
+
+}
+
+.clock span{
+
+    position: relative;
+
+    font-size: 80px;
+
+    width: 110px;
+
+    display: inline-block;
+
+    text-align: center;
+
+}
+
+.clock span::after{
+
+    position: absolute;
+
+    font-size: 16px;
+
+    left: 50%;
+
+    bottom: -5px;
+
+    transform: translateX(-50%);
+
+}
+
+#hrs::after{
+
+    content: 'HRS';
+
+}
+
+#min::after{
+
+    content: 'MIN';
+
+}
+
+#sec::after{
+
+    content: 'SEC';
+
+}
+
+</style>
+
+</body>
+
+</html>
